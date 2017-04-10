@@ -1,0 +1,85 @@
+<html>
+<head>
+<title> Show the way ! </title>
+<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+<script src="https://rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"></script>
+<script>THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'</script>
+<script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
+
+</head>
+
+<body style='margin : 0px; overflow: hidden;'>
+	<a-scene embedded artoolkit='detectionMode:'mono_and_matrix';matrixCodeType: '3x3'; sourceType: webcam;'>
+		<a-assets>
+	    <a-asset-item id="tree" src="model.dae"></a-asset-item>
+	 <a-asset-item id="fight" src="fight.dae"></a-asset-item>	
+			<a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
+			<img id="test" src="ad1.jpg">
+		</a-assets>
+
+      <a-marker type='barcode' value=0 >
+  <a-entity position="0 0 -2" rotation="0 0 0">
+           <a-animation
+                attribute="rotation"
+                to="0 -360 0"
+                dur="4000"
+                fill="forwards"
+                ease-in-out-cubic
+                repeat="indefinite">
+           </a-animation>
+             <a-entity collada-model="#tree" scale="2 2 2" rotation="0 90 0" position="0 0 0"></a-entity>
+     </a-entity>
+
+				<a-entity text-geometry="value: Merc Es 2027  ; font: #optimerBoldFont; size:0.15" position="0 1 -1" rotation="-90 0 0"  material="color: yellow" ></a-entity>
+</a-marker>
+
+  <a-marker type='barcode' value=1 >
+<!--<a-box position='0 0.5 0' material='opacity: 0.5;'></a-box> -->
+<a-image src="ad2.jpg" scale="2.5 2.5 2.5" rotation="-90 0 0"></a-image>
+</a-marker>
+
+<a-marker type='barcode' value=2>
+	<a-image src="ad1.jpg" scale="2.5 2.5 2.5" rotation="-90 0 0"></a-image>
+	<!--<a-entity text-geometry="value: Rohit Natrajan; font: #optimerBoldFont; size:0.3" position="0 0 0" rotation="-50 0 0"  material="color: green" ></a-entity> -->
+</a-marker>
+
+<a-marker type='barcode' value=3 >
+<a-entity text-geometry="value: http://rohitg.in; font: #optimerBoldFont; size:0.3" position="0 0 0" rotation="-50 0 0"  material="color: yellow" ></a-entity>
+</a-marker>
+
+<a-marker type='barcode' value=4>
+<a-entity position="0 0 0" rotation="0 0 0">
+           <a-animation
+                attribute="rotation"
+                to="360 -360 0"
+                dur="4000"
+                fill="forwards"
+                ease-in-out-cubic
+                repeat="indefinite">
+           </a-animation>
+             <a-entity collada-model="#fight" scale="0.05 0.05 0.05" rotation="0 0 0" position="0 0 0"></a-entity>
+     </a-entity>
+
+</a-marker>
+
+<a-marker type='barcode' value=5>
+<a-image src="img.png" scale="2 2 2" rotation="-90 0 0" position="0 0 0"></a-image>
+<a-image src="img.png" scale="2 2 2" rotation="-90 0 0" position="1 0 0"></a-image>
+<a-image src="img.png" scale="2 2 2" rotation="-90 0 0" position="2 0 0"></a-image>
+</a-marker>
+
+<a-marker type='barcode' value=6>
+<a-image src="img.png" scale="2 2 2" rotation="-90 0 0" position="0 0 0"></a-image>
+<a-image src="img.png" scale="2 2 2" rotation="-90 0 0" position="1 0 0"></a-image>
+
+</a-marker>
+
+<a-marker type='barcode' value=7>
+<a-image src="img.png" scale="2 2 2" rotation="-90 0 0" position="0 0 0"></a-image>
+
+</a-marker>
+
+<a-entity camera></a-entity>
+	</a-scene>
+</body>
+</html>
