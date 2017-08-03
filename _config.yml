@@ -17,8 +17,8 @@
 title: Recycle Bin
 email: 
 description: "Random things someone thinks !"
-baseurl: "/recyclebin" # the subpath of your site, e.g. /blog
-url: "http://rohitg.in" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://rohit7gupta.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: rohit7gupta
 github_username:  indiantinker
 
